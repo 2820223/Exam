@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/firstSplashFragment">
+
+    <fragment
+        android:id="@+id/firstSplashFragment"
+        android:name="uz.itschool.plants.FirstSplashFragment"
+        android:label="fragment_first_splash"
+        tools:layout="@layout/fragment_first_splash" >
+        <action
+            android:id="@+id/action_firstSplashFragment_to_secondSplashFragment"
+            app:destination="@id/secondSplashFragment" />
+        <action
+            android:id="@+id/action_firstSplashFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondSplashFragment"
+        android:name="uz.itschool.plants.SecondSplashFragment"
+        android:label="fragment_second_splash"
+        tools:layout="@layout/fragment_second_splash" >
+        <action
+            android:id="@+id/action_secondSplashFragment_to_thirdSplashFragment"
+            app:destination="@id/thirdSplashFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="uz.itschool.plants.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/thirdSplashFragment"
+        android:name="uz.itschool.plants.ThirdSplashFragment"
+        android:label="fragment_third_splash"
+        tools:layout="@layout/fragment_third_splash" >
+        <action
+            android:id="@+id/action_thirdSplashFragment_to_fourthSplashFragment"
+            app:destination="@id/fourthSplashFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fourthSplashFragment"
+        android:name="uz.itschool.plants.FourthSplashFragment"
+        android:label="fragment_fourth_splash"
+        tools:layout="@layout/fragment_fourth_splash" >
+        <action
+            android:id="@+id/action_fourthSplashFragment_to_fifthSplashFragment2"
+            app:destination="@id/fifthSplashFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/fifthSplashFragment2"
+        android:name="uz.itschool.plants.FifthSplashFragment"
+        android:label="fragment_fifth_splash"
+        tools:layout="@layout/fragment_fifth_splash" >
+        <action
+            android:id="@+id/action_fifthSplashFragment2_to_entranceFragment"
+            app:destination="@id/entranceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/entranceFragment"
+        android:name="uz.itschool.plants.EntranceFragment"
+        android:label="fragment_entrance"
+        tools:layout="@layout/fragment_entrance" >
+        <action
+            android:id="@+id/action_entranceFragment_to_createAccountFragment"
+            app:destination="@id/createAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAccountFragment"
+        android:name="uz.itschool.plants.CreateAccountFragment"
+        android:label="fragment_create_account"
+        tools:layout="@layout/fragment_create_account" />
+</navigation>

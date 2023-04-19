@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">PLants</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="thirdsplash">We provide high \n quality plants just \n for you</string>
+    <string name="fourthsplash">Your satisfaction is \n or number one \n prioroty</string>
+    <string name="fifthsplash">Let \' s shop your \n Favourite Plants with \n Potea now!</string>
+    <string name="welcome2">The best plant  e-commerce  online store \n app of the century for your needs</string>
+    <string name="login"> Log in to your acoount</string>
+    <string name="lettingin">Let\'s you in </string>
+    <string name="facebook">Continue with Facebook</string>
+    <string name="google">Continue with Google</string>
+    <string name="apple">Continue with Apple</string>
+    <string name="or">or</string>
+    <string name="singInWithPassword">Sign in with password</string>
+    <string name="donthaveanaccount">Don\'t have an account? </string>
+    <string name="signUp">Sign up</string>
+    <string name="createaccount">Create your account</string>
+    <string name="signIN">Sign in</string>
+    <string name="singUp">Sign up</string>
+    <string name="orContinueWith">or continue with</string>
+    <string name="alreadyhaveanaccount">Already have an account? </string>
+
+</resources>
