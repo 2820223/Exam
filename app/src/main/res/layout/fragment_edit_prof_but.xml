@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".EditProfButFragment">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/editpro_back"
+            app:icon="@drawable/baseline_arrow_back_24"
+            app:iconTint="@color/black"
+            app:iconSize="30dp"
+            style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Edit Profile"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/regular"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="80dp"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!--        <EditText-->
+        <!--            android:id="@+id/fullname_edp"-->
+        <!--            android:layout_width="320dp"-->
+        <!--            android:layout_height="60dp"-->
+
+        <!--            android:hint="Full name"-->
+        <!--            android:inputType="text"-->
+        <!--            />-->
+
+        <TextView
+            android:id="@+id/password_edp"
+            android:layout_width="320dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="14dp"
+            android:hint="Password"
+
+            />
+
+
+
+        <TextView
+
+            android:id="@+id/email_edp"
+            android:layout_width="320dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="14dp"
+            android:drawableEnd="@drawable/baseline_email_24"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            />
+
+        <!--        <EditText-->
+        <!--            android:layout_marginTop="14dp"-->
+        <!--            android:id="@+id/birth_date_edp"-->
+        <!--            android:layout_width="320dp"-->
+        <!--            android:layout_height="60dp"-->
+
+        <!--            android:drawableEnd="@drawable/baseline_calendar_month_24"-->
+        <!--            android:hint="Date of birth"-->
+        <!--            android:inputType="date"-->
+        <!--            />-->
+        <!--        <EditText-->
+        <!--            android:id="@+id/phone_edp"-->
+        <!--            android:layout_width="320dp"-->
+        <!--            android:layout_height="60dp"-->
+        <!--            android:layout_marginTop="14dp"-->
+        <!--            android:hint="Phone number"-->
+        <!--            android:inputType="phone"-->
+        <!--            />-->
+
+        <!--        <Spinner-->
+        <!--            android:layout_marginTop="18dp"-->
+
+        <!--            android:layout_width="320dp"-->
+        <!--            android:layout_height="50dp"-->
+
+        <!--         />-->
+    </LinearLayout>
+    <!--    <com.google.android.material.button.MaterialButton-->
+    <!--        android:id="@+id/update"-->
+    <!--        android:layout_width="328dp"-->
+    <!--        android:layout_height="62dp"-->
+    <!--        android:layout_gravity="center"-->
+    <!--android:layout_marginTop="70dp"-->
+    <!--        android:backgroundTint="#40A545"-->
+    <!--        android:text="update"-->
+    <!--        android:textSize="18sp"-->
+    <!--        app:cornerRadius="20dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.496"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/spinner1" />-->
+</LinearLayout>

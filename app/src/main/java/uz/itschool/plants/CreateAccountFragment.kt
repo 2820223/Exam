@@ -1,10 +1,18 @@
 package uz.itschool.plants
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
+import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import uz.itschool.plants.databinding.FragmentCreateAccountBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -30,15 +38,64 @@ class CreateAccountFragment : Fragment() {
         }
     }
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var binding = FragmentCreateAccountBinding.inflate(inflater, container, false)
+
+
+        var sharedpreferences= this.activity?.getSharedPreferences("reg", Context.MODE_PRIVATE)
+        var edit = sharedpreferences?.edit()
+        var gson = Gson()
+        var userList = mutableListOf<User>()
+        var type = object : TypeToken<List<User>>() {}.type
+        val binding=FragmentCreateAccountBinding.inflate(inflater,container,false)
+        binding.next.setOnClickListener {
+            var usersData=sharedpreferences?.getString("users","")
+            var pos=false
+
+            if(usersData==""){
+                userList= mutableListOf()
+                userList.add(User(binding.email3.text.toString(),binding.pasword3.text.toString()))
+                Toast.makeText(this.activity,"Succesfully registered", Toast.LENGTH_SHORT).show()
+                val string=gson.toJson(userList)
+                edit?.putString("users",string)?.commit()
+            }else{
+                userList = gson.fromJson(usersData,type)
+                for( i in userList){
+                    if(i.email!=binding.email3.text.toString() && i.password!=binding.pasword3.text.toString()){
+                        pos=true
+                    }
+                    else{
+                        pos=false
+                        break
+                    }
+
+                }
+                if(pos==true){
+                    userList.add(User(binding.email3.text.toString(),binding.pasword3.text.toString()))
+                    Toast.makeText(activity,"Succesfully registered", Toast.LENGTH_SHORT).show()
+                    val str = gson.toJson(userList)
+                    edit?.putString("users", str)?.commit()
+                    findNavController().navigate(R.id.action_createAccountFragment_to_fillingprofileFragment)
+                }
+                else{
+                    Toast.makeText(activity,"Change inputs!", Toast.LENGTH_SHORT).show()
+                }
+            }
 
 
 
-                return binding.root
+
+        }
+        binding.signIn.setOnClickListener {
+            findNavController().navigate(R.id.action_createAccountFragment_to_loginFragment)
+        }
+        binding.back.setOnClickListener {
+            findNavController().navigate(R.id.action_createAccountFragment_to_entranceFragment)
+        }
+        return binding.root
     }
 
     companion object {

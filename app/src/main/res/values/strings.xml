@@ -1,10 +1,10 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">PLants</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="thirdsplash">We provide high \n quality plants just \n for you</string>
     <string name="fourthsplash">Your satisfaction is \n or number one \n prioroty</string>
-    <string name="fifthsplash">Let \' s shop your \n Favourite Plants with \n Potea now!</string>
+    <string name="fifthsplash">Let\'s shop your\nFavourite Plants with \nPotea now!</string>
     <string name="welcome2">The best plant  e-commerce  online store \n app of the century for your needs</string>
     <string name="login"> Log in to your acoount</string>
     <string name="lettingin">Let\'s you in </string>
@@ -20,5 +20,18 @@
     <string name="singUp">Sign up</string>
     <string name="orContinueWith">or continue with</string>
     <string name="alreadyhaveanaccount">Already have an account? </string>
+    <string name="fullName">Full name</string>
+    <string name="nickName">Nick name</string>
+    <string name="dateOfBirt">Date of birth</string>
+    <string name="email">Email</string>
+    <string name="phoneNum">Phone number</string>
+    <string name="continue2" tools:ignore="ExtraTranslation">Continue</string>
+    <string name="fc">Continue with Facebook</string>
+    <string name="gg">Continue with Google</string>
+    <string name="ap">Continue with Apple</string>
 
+    <string name="st">Sign in with password</string>
+    <string name="dont">Don\'t have an account?</string>
+    <string name="sign">Sign up</string>
+    <string name="select_the_payment_method_you_want_to_use">Select the payment method you want to use</string>
 </resources>

@@ -1,10 +1,17 @@
 package uz.itschool.plants
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import uz.itschool.plants.databinding.FragmentLoginBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,12 +36,71 @@ class LoginFragment : Fragment() {
         }
     }
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+
+
+        val share = SHaredPreference.getInstance(requireContext())
+
+//        share.setStatus(true)
+        var sharedpreferences = this.activity?.getSharedPreferences("reg", Context.MODE_PRIVATE)
+        var edit = sharedpreferences?.edit()
+        var gson = Gson()
+        var userList = mutableListOf<User>()
+        var type = object : TypeToken<List<User>>() {}.type
+        val binding = FragmentLoginBinding.inflate(inflater, container, false)
+        binding.next.setOnClickListener {
+            var usersData = sharedpreferences?.getString("users", "")
+            var pos = false
+
+            if (usersData == "") {
+                Toast.makeText(this.activity, "Enter empty blanks!", Toast.LENGTH_SHORT).show()
+            } else {
+                userList = gson.fromJson(usersData, type)
+                for (i in userList) {
+                    if (i.email == binding.email3.text.toString() && i.password == binding.pasword3.text.toString()) {
+                        pos = true
+
+//                        var emaill=binding.emailLoginn.text.toString()
+//                        var ph=binding.passwordLogin.text.toString()
+                        val obj: User = i as User
+                        break
+                    } else {
+                        pos = false
+                    }
+                }
+                if (pos) {
+                    var emaill = binding.email3.text.toString()
+                    var ph = binding.pasword3.text.toString()
+
+                    var user = User(emaill, ph)
+                    var userJson = Gson().toJson(user)
+
+                    var shared = requireContext().getSharedPreferences("reg", Context.MODE_PRIVATE)
+                    shared.edit().putString("active_user", userJson).apply()
+
+                    findNavController().navigate(R.id.action_loginFragment_to_homeFragment,)
+                } else {
+                    Toast.makeText(this.activity, "You did not registered yet!", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            }
+        }
+        binding.signUp.setOnClickListener {
+
+//                val extras = FragmentNavigatorExtras(img to "img_big")
+            findNavController().navigate(R.id.action_loginFragment_to_createAccountFragment)
+        }
+
+
+
+
+
+
+               return binding.root
     }
 
     companion object {

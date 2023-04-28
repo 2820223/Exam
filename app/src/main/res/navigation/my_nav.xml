@@ -30,7 +30,14 @@
         android:id="@+id/loginFragment"
         android:name="uz.itschool.plants.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_createAccountFragment"
+            app:destination="@id/createAccountFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/thirdSplashFragment"
         android:name="uz.itschool.plants.ThirdSplashFragment"
@@ -66,10 +73,141 @@
         <action
             android:id="@+id/action_entranceFragment_to_createAccountFragment"
             app:destination="@id/createAccountFragment" />
+        <action
+            android:id="@+id/action_entranceFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/createAccountFragment"
         android:name="uz.itschool.plants.CreateAccountFragment"
         android:label="fragment_create_account"
-        tools:layout="@layout/fragment_create_account" />
+        tools:layout="@layout/fragment_create_account" >
+        <action
+            android:id="@+id/action_createAccountFragment_to_fillingprofileFragment"
+            app:destination="@id/fillingprofileFragment" />
+        <action
+            android:id="@+id/action_createAccountFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_createAccountFragment_to_entranceFragment"
+            app:destination="@id/entranceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fillingprofileFragment"
+        android:name="uz.itschool.plants.FillingprofileFragment"
+        android:label="fragment_fillingprofile"
+        tools:layout="@layout/fragment_fillingprofile" >
+        <action
+            android:id="@+id/action_fillingprofileFragment_to_PIncodeFragment"
+            app:destination="@id/PIncodeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/PIncodeFragment"
+        android:name="uz.itschool.plants.PIncodeFragment"
+        android:label="fragment_p_incode"
+        tools:layout="@layout/fragment_p_incode" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="uz.itschool.plants.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_emptyFragment"
+            app:destination="@id/emptyFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_checkOutFragment"
+            app:destination="@id/checkOutFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_myWishListFragment"
+            app:destination="@id/myWishListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_trackFragment"
+            app:destination="@id/trackFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_editProfButFragment"
+            app:destination="@id/editProfButFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/emptyFragment"
+        android:name="uz.itschool.plants.EmptyFragment"
+        android:label="fragment_empty"
+        tools:layout="@layout/fragment_empty" />
+    <fragment
+        android:id="@+id/checkOutFragment"
+        android:name="uz.itschool.plants.CheckOutFragment"
+        android:label="fragment_check_out"
+        tools:layout="@layout/fragment_check_out" >
+        <action
+            android:id="@+id/action_checkOutFragment_to_payMethodFragment"
+            app:destination="@id/payMethodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="uz.itschool.plants.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myWishListFragment"
+        android:name="uz.itschool.plants.MyWishListFragment"
+        android:label="fragment_my_wish_list"
+        tools:layout="@layout/fragment_my_wish_list" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="uz.itschool.plants.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" >
+        <action
+            android:id="@+id/action_notificationFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="uz.itschool.plants.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" >
+        <action
+            android:id="@+id/action_blankFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_blankFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trackFragment"
+        android:name="uz.itschool.plants.TrackFragment"
+        android:label="fragment_track"
+        tools:layout="@layout/fragment_track" />
+    <fragment
+        android:id="@+id/payMethodFragment"
+        android:name="uz.itschool.plants.payMethodFragment"
+        android:label="fragment_pay_method"
+        tools:layout="@layout/fragment_pay_method" >
+        <action
+            android:id="@+id/action_payMethodFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/edirProfileFragment"
+        android:name="uz.itschool.plants.EdirProfileFragment"
+        android:label="fragment_edir_profile"
+        tools:layout="@layout/fragment_edir_profile" >
+        <action
+            android:id="@+id/action_edirProfileFragment_to_createAccountFragment"
+            app:destination="@id/createAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfButFragment"
+        android:name="uz.itschool.plants.EditProfButFragment"
+        android:label="fragment_edit_prof_but"
+        tools:layout="@layout/fragment_edit_prof_but" />
 </navigation>

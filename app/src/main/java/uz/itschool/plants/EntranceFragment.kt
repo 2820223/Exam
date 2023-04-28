@@ -41,6 +41,11 @@ class EntranceFragment : Fragment() {
 
             findNavController().navigate(R.id.action_entranceFragment_to_createAccountFragment)
         }
+
+        binding.next.setOnClickListener {
+
+            findNavController().navigate(R.id.action_entranceFragment_to_loginFragment)
+        }
                 return binding.root
     }
 
